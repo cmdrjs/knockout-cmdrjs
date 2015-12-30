@@ -84,9 +84,6 @@
             grunt.config.set('pkg', grunt.file.readJSON('package.json'));
         });
 
-        //For development
-        grunt.registerTask('dev', ['jshint', 'clean:dev', 'copy:dev', 'watch:scripts']);
-
         //For testing
         grunt.registerTask('test', ['jshint', 'karma:once']);
         grunt.registerTask('test:debug', ['karma:once']);
