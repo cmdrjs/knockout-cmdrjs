@@ -1,0 +1,18 @@
+{
+  "name": "knockout.bindingHandlers.cmdr",
+  "main": "src/cmdr.js",
+  "version": "0.0.0",
+  "ignore": [
+    "node_modules",
+    "spec",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "knockout.js": ">=2.1.0"
+  },
+  "devDependencies": {
+    "requirejs": "*"
+  }
+}
