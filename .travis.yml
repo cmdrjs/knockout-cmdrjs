@@ -1,6 +1,20 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 before_script:
-  - npm install -g grunt-cli
-  - npm install -g bower
+- npm install -g grunt-cli
+- npm install -g bower
+cache:
+  directories:
+  - node_modules
+  - bower_components
+deploy:
+  provider: releases
+  api_key:
+    secure: X5QUqtQ5U7p27xJT0DoTKAvQ0n1gwYSUT1wh8vy4Q5ME0OTb0qM6GaE65l79dOoQKxQ5gEqGerln/X1SxbY66dYdo8XLEicOvHxkzNu9iJlptmeXso+cd2tefb9ZEW9DF70BSAuexvOumQ72jjgZLsgaeXqVfmABvQbnQ48IGFlD74QATqP+ohoG7QpC15plpgByZ8KZyYdNUdMgw8eN4jgAdmrrXgi3g3Adpea0lPmgb17bNGcAOvWlxajUlFePWMlN6VD6BKhPxU2E5jVkmI9jLbhBw699oS2flxQgEhDAhJSv3OVUOXZj0ec0uDUvbJPLhfHti5xhTrMM9jEnoJKuxc4DJ0XD/eCTZLkDfNavsDZlKyBauOR4DhmZXCTF4KW+vHgwFmmc6vouD6bf5B0d25SS+d0NNUzJvijUNVhDXGuOQFx+fPLyKp/+QK7w/WLZu2mkwjxXW0FKzVj/G/4S9KB5h+Z4jhohlt8ckkh85ILv1NOxiKOiRqHenxxTnS+WpVO9M0g6bEyM8hq16sZsoUsJiB3WRZWgnpLp8MjR9qYQVdxDXkD80u8doeqnzs+al8JuCqa0TdnKNexA0G9vu4PFwIkIaqUs5TLTOu1C7KzvTPKmEnJs4+3IuqMuYc3Z5X37felaEaYCFGRjNAb/tMt2R2xIhTxXzEuRuvA=
+  file: 
+  - dist/knockout.cmdr.js 
+  - dist/knockout.cmdr.min.js
+  on:
+    tags: true
+    repo: cmdrjs/knockout-cmdrjs
