@@ -1,6 +1,6 @@
 # knockout-cmdrjs (knockout.cmdr.js)
 
-A jQuery plugin for [cmdrjs](https://github.com/cmdrjs/cmdrjs).
+A Knockout component for [cmdrjs](https://github.com/cmdrjs/cmdrjs).
 
 [![Build status](https://travis-ci.org/cmdrjs/knockout-cmdrjs.png)](https://travis-ci.org/cmdrjs/knockout-cmdrjs)
 [![Bower version](https://badge.fury.io/bo/knockout-cmdrjs.svg)](http://badge.fury.io/bo/knockout-cmdrjs)
