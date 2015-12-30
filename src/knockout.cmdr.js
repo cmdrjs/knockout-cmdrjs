@@ -3,7 +3,7 @@
     if (typeof define === 'function' && define.amd) {
         define(['knockout', 'cmdr', 'module'], factory);
     } else {
-        factory(root.jQuery, root.cmdr);
+        factory(root.ko, root.cmdr);
     }
 })(this, function (ko, cmdr, module) {
     'use strict';
@@ -16,9 +16,15 @@
     ko.components.register(componentName, {
         viewModel: {
             createViewModel: function (params, componentInfo) {
-                this.shell = new cmdr.Shell(componentInfo.element, params);
+                          
+                this.shell = new cmdr.Shell(componentInfo.element, params.options);
+                              
+                if (ko.isWriteableObservable(params.shell)) {
+                    params.shell(this.shell);
+                }
             }
         },
-        template: '&zwnj;'
+        template: ' ',
+        synchronous: true
     });
 });

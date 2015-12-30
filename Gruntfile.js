@@ -9,17 +9,7 @@
             banner: '/* <%= pkg.name %> | version <%= pkg.version %> | license <%= pkg.license %> | (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %> | <%= pkg.homepage %> */\n',
             // Task configuration.
             clean: {
-                dist: ['dist'],
-                dev: ['dev/*', '!dev/index.html']
-            },
-            copy: {
-                dev: {
-                    expand: true,
-                    src: ['src/knockout.cmdr.js', 'bower_components/cmdrjs/dist/cmdr.js', 'bower_components/cmdrjs/dist/cmdr.css', 'bower_components/knockout/dist/knockout.js'],
-                    dest: 'dev/',
-                    flatten: true,
-                    filter: 'isFile'
-                }
+                dist: ['dist']
             },
             concat: {
                 options: {
@@ -39,6 +29,11 @@
                     src: '<%= concat.dist.dest %>',
                     dest: 'dist/knockout.cmdr.min.js'
                 }
+            },
+            version: {
+                default: {
+                    src: ['package.json']
+                }  
             },
             jshint: {
                 all: ['Gruntfile.js', 'src/**/*.js', 'spec/**/*.js']
@@ -78,7 +73,15 @@
                 server: {
                     background: true,
                 },
+            },
+            readpkg: {
+                default: { }
             }
+        });
+        
+        //Utils
+        grunt.registerMultiTask('readpkg', 'Read in the package.json file', function (){
+            grunt.config.set('pkg', grunt.file.readJSON('package.json'));
         });
 
         //For development
@@ -86,6 +89,16 @@
 
         //For testing
         grunt.registerTask('test', ['jshint', 'karma:once']);
+        grunt.registerTask('test:debug', ['karma:once']);
         grunt.registerTask('test:full', ['jshint', 'bowerVerify']);
+        
+        //For building
+        grunt.registerTask('build', ['jshint', 'karma:once', 'clean', 'concat', 'uglify']);
+                
+        //For releasing
+        grunt.registerTask('release', ['release:patch']);
+        grunt.registerTask('release:major', ['version::major', 'readpkg', 'build']);
+        grunt.registerTask('release:minor', ['version::minor', 'readpkg', 'build']);
+        grunt.registerTask('release:patch', ['version::patch', 'readpkg', 'build']);
     };
 })();
