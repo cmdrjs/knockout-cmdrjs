@@ -1,25 +1,37 @@
 {
-  "name": "noname",
-  "version": "0.0.0",
-  "private": true,
+  "name": "knockout-cmdrjs",
+  "version": "1.0.0",
+  "description": "A Knockoutjs component for cmdrjs.",
+  "keywords": [
+    "knockout-component"
+  ],
+  "author": "John Cruikshank",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmdrjs/knockout-cmdrjs"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "bower install && grunt test:full"
+  },
   "devDependencies": {
+    "bower": "*",
     "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "load-grunt-tasks": "*",
-    "grunt-contrib-jshint": "*",
-    "grunt-karma": "*",
     "grunt-bower": "*",
+    "grunt-bower-requirejs": "*",
     "grunt-bower-verify": "*",
-    "karma-requirejs": "*",
-    "karma-phantomjs-launcher": "*",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "*",
     "karma": "*",
     "karma-expect": "*",
     "karma-mocha": "*",
-    "bower": "*",
-    "grunt-bower-requirejs": "*"
-
-  },
-  "scripts": {
-    "test": "bower install && grunt test:full"
+    "karma-phantomjs-launcher": "*",
+    "karma-requirejs": "*",
+    "load-grunt-tasks": "*"
   }
 }

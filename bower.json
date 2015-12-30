@@ -1,16 +1,19 @@
 {
-  "name": "knockout.bindingHandlers.cmdr",
-  "main": "src/cmdr.js",
-  "version": "0.0.0",
-  "ignore": [
-    "node_modules",
-    "spec",
-    "Gruntfile.js",
-    "karma.conf.js",
-    "package.json"
+  "name": "knockout-cmdrjs",
+  "main": "dist/knockout.cmdr.js",
+  "description": "A Knockoutjs component for cmdrjs.",
+  "keywords": [
+    "knockout-component"
   ],
+  "author": "John Cruikshank",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmdrjs/knockout-cmdrjs"
+  },
+  "license": "MIT",
   "dependencies": {
-    "knockout.js": ">=2.1.0"
+    "cmdrjs": "~1.1.2-beta",
+    "knockout": "~3.4.0"
   },
   "devDependencies": {
     "requirejs": "*"
