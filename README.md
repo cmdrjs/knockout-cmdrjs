@@ -27,7 +27,7 @@ Download files from the [releases](https://github.com/cmdrjs/knockout-cmdrjs/rel
 
 <script>    
     var vm = { 
-        shell: ko.observable() //will be set to instance of cmdr.Shell created by component.
+        shell: ko.observable() //will be set to instance of the Shell class created by component.
         options: {} //set Shell class options here.
     };
     
