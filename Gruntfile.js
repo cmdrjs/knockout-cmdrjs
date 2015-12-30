@@ -80,7 +80,7 @@
         });
         
         //Utils
-        grunt.registerMultiTask('readpkg', 'Read in the package.json file', function (){
+        grunt.registerTask('readpkg', function (){
             grunt.config.set('pkg', grunt.file.readJSON('package.json'));
         });
 
