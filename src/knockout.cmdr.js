@@ -17,11 +17,17 @@
         viewModel: {
             createViewModel: function (params, componentInfo) {
                           
-                this.shell = new cmdr.Shell(componentInfo.element, params.options);
+                var shell = new cmdr.Shell(componentInfo.element, params.options);
+                
+                this.shell = shell;
                               
                 if (ko.isWriteableObservable(params.shell)) {
-                    params.shell(this.shell);
+                    params.shell(shell);
                 }
+                
+                ko.utils.domNodeDisposal.addDisposeCallback(componentInfo.element, function() {
+                    shell.dispose();
+                });
             }
         },
         template: ' ',
