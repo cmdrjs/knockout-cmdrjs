@@ -1,7 +1,7 @@
 {
   "name": "knockout-cmdrjs",
   "main": "dist/knockout.cmdr.js",
-  "description": "A Knockoutjs component for cmdrjs.",
+  "description": "A cmdrjs component for Knockout.",
   "keywords": [
     "knockout-component"
   ],
